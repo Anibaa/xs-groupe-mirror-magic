@@ -12,7 +12,7 @@ export const useRevealAnimation = () => {
         const windowHeight = window.innerHeight;
         
         // Get delay from data-delay attribute or use 0
-        const delay = element.getAttribute('data-delay') || 0;
+        const delay = parseInt(element.getAttribute('data-delay') || '0', 10);
         
         if (elementTop < windowHeight - elementHeight / 4) {
           setTimeout(() => {
