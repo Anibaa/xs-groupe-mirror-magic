@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -32,7 +33,9 @@ const AboutSection = () => {
                 <p className="text-gray-600">Customer Support</p>
               </div>
             </div>
-            <Button className="bg-primary hover:bg-primary-dark">Learn More About Us</Button>
+            <Link to="/about">
+              <Button className="bg-primary hover:bg-primary-dark">Learn More About Us</Button>
+            </Link>
           </div>
           
           <div className="order-1 lg:order-2">

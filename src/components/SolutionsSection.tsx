@@ -3,24 +3,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 import useParallaxEffect from "@/hooks/useParallaxEffect";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Link } from "react-router-dom";
 
 const solutions = [
   {
     title: "Smart Port Operations",
     description: "AI-powered port management systems with automated scheduling, predictive maintenance, and real-time vessel tracking.",
-    imageSrc: "https://images.unsplash.com/photo-1504433374832-4fcf45f40967?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1504433374832-4fcf45f40967?q=80&w=1000",
     category: "Smart Infrastructure"
   },
   {
     title: "Digital Container Management",
     description: "IoT-enabled container tracking with blockchain documentation and automated customs processing systems.",
-    imageSrc: "https://images.unsplash.com/photo-1577431264915-0902e1d19e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1577431264915-0902e1d19e8f?q=80&w=1000",
     category: "IoT Solutions"
   },
   {
     title: "Autonomous Transport Systems",
     description: "Semi-autonomous cargo handling and transport with machine learning optimization for route planning and fuel efficiency.",
-    imageSrc: "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?q=80&w=1000",
     category: "Autonomous Tech"
   },
 ];
@@ -135,7 +136,7 @@ const SolutionsSection = () => {
                       ))}
                       {[...Array(10)].map((_, i) => (
                         <line 
-                          key={i} 
+                          key={`v-${i}`} 
                           x1={i * 10} 
                           y1="0" 
                           x2={i * 10} 
@@ -198,14 +199,16 @@ const SolutionsSection = () => {
         
         {/* Tech CTA */}
         <div className="mt-16 text-center">
-          <button className="px-6 py-3 bg-gradient-to-r from-primary to-blue-600 rounded-md text-white font-medium hover:from-blue-600 hover:to-primary transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 group">
-            <span className="flex items-center">
-              <span>Explore All Technology Solutions</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </button>
+          <Link to="/solutions">
+            <button className="px-6 py-3 bg-gradient-to-r from-primary to-blue-600 rounded-md text-white font-medium hover:from-blue-600 hover:to-primary transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 group">
+              <span className="flex items-center">
+                <span>Explore All Technology Solutions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

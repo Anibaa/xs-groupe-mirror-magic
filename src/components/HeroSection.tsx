@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Code, Database, Network, Server } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -127,18 +128,22 @@ const HeroSection = () => {
             Leveraging cutting-edge technology for comprehensive and efficient solutions in global maritime transportation, logistics, and supply chain optimization.
           </p>
           <div className={`flex flex-wrap gap-4 ${isLoaded ? 'slide-up' : ''}`} style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="bg-primary hover:bg-primary-dark text-white hover-scale group">
-              <span>Discover Our Solutions</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-            <Button size="lg" variant="outline" className="glass-effect border-white text-white hover:bg-white/20 hover-scale group">
-              <span>Tech Capabilities</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Button>
+            <Link to="/solutions">
+              <Button size="lg" className="bg-primary hover:bg-primary-dark text-white hover-scale group">
+                <span>Discover Our Solutions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Button>
+            </Link>
+            <Link to="/services">
+              <Button size="lg" variant="outline" className="glass-effect border-white text-white hover:bg-white/20 hover-scale group">
+                <span>Tech Capabilities</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Button>
+            </Link>
           </div>
           
           {/* Tech-styled scroll indicator */}
